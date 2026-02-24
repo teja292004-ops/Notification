@@ -1,0 +1,135 @@
+/* KodNest Premium Build System - Layout Structure */
+
+.kn-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOP BAR */
+.kn-topbar {
+  height: var(--topbar-height);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.kn-topbar__project {
+  font-size: var(--font-size-body-large);
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.kn-topbar__progress {
+  font-size: var(--font-size-small);
+  color: var(--color-text-primary);
+  opacity: 0.6;
+}
+
+.kn-topbar__status {
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+}
+
+.kn-topbar__status--not-started {
+  color: var(--color-text-primary);
+  opacity: 0.5;
+}
+
+.kn-topbar__status--in-progress {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.kn-topbar__status--shipped {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+/* CONTEXT HEADER */
+.kn-context-header {
+  padding: var(--space-xl) var(--space-lg);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.kn-context-header__title {
+  margin-bottom: var(--space-sm);
+}
+
+.kn-context-header__subtitle {
+  font-size: var(--font-size-body-large);
+  color: var(--color-text-primary);
+  opacity: 0.7;
+  max-width: var(--text-max-width);
+}
+
+/* MAIN CONTENT AREA */
+.kn-main {
+  flex: 1;
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+}
+
+/* PRIMARY WORKSPACE */
+.kn-workspace {
+  flex: 0 0 var(--workspace-width);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* SECONDARY PANEL */
+.kn-panel {
+  flex: 0 0 calc(var(--panel-width) - var(--space-md));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* PROOF FOOTER */
+.kn-proof-footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-md) var(--space-lg);
+  position: sticky;
+  bottom: 0;
+}
+
+.kn-proof-footer__title {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
+  opacity: 0.6;
+}
+
+.kn-proof-footer__checklist {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .kn-main {
+    flex-direction: column;
+  }
+  
+  .kn-workspace,
+  .kn-panel {
+    flex: 1;
+    width: 100%;
+  }
+}
