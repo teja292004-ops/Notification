@@ -15,7 +15,7 @@ let savedJobs = JSON.parse(localStorage.getItem('savedJobs') || '[]');
 class Router {
   constructor() {
     this.routes = {
-      '/': 'landing',
+      '/': 'dashboard',
       '/dashboard': 'dashboard',
       '/saved': 'saved',
       '/digest': 'digest',
